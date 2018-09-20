@@ -1,0 +1,119 @@
+$transition: all 0.35s cubic-bezier(0.310, -0.105, 0.430, 1.590);
+html {
+  min-height: 100%;
+  position: relative;
+}
+h2 {
+  font-family:'Lobster', Arial, serif;
+  margin-top: -50px;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight:300;
+}
+h1 {
+  font-family:'Lora', Arial, serif;
+  margin-bottom: 45px;
+  font-size: 55px;
+  line-height: 1.2;
+  font-family:'lora';
+}
+header {
+  padding: 0px 20px 0px 20px;
+  font-size: 14px;
+}
+body {
+  color: #fff;
+  font-family: 'Lora', sans serif;
+  font-size: 16px;
+  text-align: center;
+  background: #262730;
+   margin-bottom: 5em;
+}
+#container{
+
+}
+.footer {
+  background: #1B1B26;
+  display:block;
+  width:100%;
+  bottom: 0;
+  left: 0;
+  height: 5em;
+  position: absolute;
+}
+a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+$colors: (
+	"tumblr": "#36465d",
+	"codepen": "#333",
+  "github":"#000",
+	"twitter": "#3CF",
+	"instagram": "#3f729b"
+);
+.social-buttons {
+	height: auto;
+	margin: auto;
+	padding: 40px;
+	text-align: center;
+}
+.button-main {
+  font-size: 1.8rem;
+  color:#333;
+	display:inline-block;
+	padding:0.5em 1.75em 0.5em 1em;
+	border-radius: 0.25em;
+	background: #F0F0F0;
+	border:1px solid #ccc;
+	position: relative;
+	margin:25px 0 25px 0;
+}
+.social-button,.button-main:hover {
+ background-color: #FFF;
+  color: d9eef7;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.button-main:focus{
+  border-bottom: 1px solid #2A9AF2;
+  box-shadow: 0px 1px 0px 0px #2A9AF2;
+}
+.social-button {
+	display: inline-block;
+	background-color: #fff;
+	width: 90px;
+	height: 90px;
+	margin: 0 10px;
+	text-align: center;
+	overflow: hidden;
+	//overflow bug fix
+	border-radius: 50%;
+
+	.fa {
+		font-size: 40px;
+    padding: 20px;
+		vertical-align: middle;
+		transition: $transition;
+	}
+	@each $class,$color in $colors {
+
+		&.#{$class} {
+			.fa {
+				color: #{$color};
+			}
+		}
+	}
+	&:hover {
+		.fa {
+			transform: scale(1.2);
+		}
+	}
+}
+
+// Media Queires
+@media(max-width:400px) {
+    .footer {
+        padding: 10px 0 10px 0px;
+    }
+}
